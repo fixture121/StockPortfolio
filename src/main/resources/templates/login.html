@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en"
+>
+<head><title>Stonks - Login</title></head>
+<header th:insert="fragments/header.html::header"></header>
+<body>
+<h1>Login</h1>
+<form method="post" th:action="@{/login}">
+  <div th:if="${param.error}">
+    <div class="error">
+      Invalid Credentials
+    </div>
+  </div>
+  <div th:if="${param.logout}">
+    <div class="success">
+      You have been logged out
+    </div>
+  </div>
+  Email: <input type="email" name="username"><br>
+  Password: <input type="password" name="password"><br>
+  <input type="submit" value="Log In" name="login-submit">
+</form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en"
+>
+<head><title>STONKS - View Market</title></head>
+<header th:insert="fragments/secureHeader.html::secureHeader"></header>
+<body>
+<h1>Market</h1>
+<script src="../static/js/apiScript.js" th:src="@{/js/apiScript.js}"></script>
+<h3 th:each="s : ${apiStockList}">
+  <a href="#" th:onclick="'getApiStock('+${s.ticker} +')'" th:text="${s.company}"></a>
+  <div th:id="'apiStock' + ${s.ticker}"></div>
+</h3>
+</body>
+</html>

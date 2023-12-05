@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        lang="en"
+>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="../static/js/script.js" th:src="@{/js/script.js}"></script>
+  <title>Stonks - Create an Account</title>
+</head>
+<header th:insert="fragments/header.html::header"></header>
+<body>
+<h1>Register Here</h1>
+<h2>Welcome to the Diamond Hands Community</h2>
+<div id="error" class="error"></div>
+<!-- onsubmit="return verify()" calls the JavaScript method to verify -->
+<form
+        name="form"
+        action="#"
+        th:action="@{/register}"
+        method="post"
+        onsubmit="return verify()"
+>
+  Email: <input type="email" name="username" /><br />
+  Password: <input type="password" name="password" /><br />
+  Verify Password: <input type="password" name="verifyPassword" /><br />
+  <input type="submit" value="Register" />
+</form>
+</body>
+</html>
